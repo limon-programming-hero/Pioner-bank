@@ -1,0 +1,29 @@
+#LoginSection{
+   margin-top: 100px;
+   display: block;
+}
+.Form{
+    margin-top: 50px;
+    padding:40px 50px;
+    box-shadow: 5px 5px 10px gray;
+    border-radius: 10px;
+}
+#BankInnerSection{
+    display: none;
+    margin-top: 100px;
+}
+.showBalance{
+    margin:10px 15px;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+#deposit{
+    background-color: slateblue;
+}
+#withdraw{
+    background-color: lightsalmon;
+}
+#balance{
+    background-color: orange;
+}
