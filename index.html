@@ -87,36 +87,33 @@
         
         // deposit event handler
         document.getElementById("DepositButton").addEventListener("click", function () {
-            var DepositCurrentNumberJs = TextToNumber("DepositCurrentValue");
-            var BalanceCurrentNumberJs = TextToNumber("BalanceCurrentValue");
             var DepositeNumber = ValueToNumber("DepositValue");
 
-            var totalDeposit = totalAmount(DepositCurrentNumberJs , DepositeNumber);
-            var TotalBalance = totalAmount(BalanceCurrentNumberJs,DepositeNumber);
+            totalAmount("DepositCurrentValue" , DepositeNumber);
+            totalAmount("BalanceCurrentValue", DepositeNumber);
             
-            document.getElementById("DepositCurrentValue").innerText = totalDeposit;
-            document.getElementById("BalanceCurrentValue").innerText = TotalBalance;
             document.getElementById("DepositValue").value = "";
         })
         
         // withdraw event handler
         document.getElementById("WithdrawButton").addEventListener("click",function(){
-            
-        })
+            var WithdrawNumber = ValueToNumber("WithdrawValue");
 
-        function TextToNumber (id) {
-            var text = document.getElementById(id).innerText;
-            var number = parseFloat(text);
-            return number;
-        }
+            totalAmount("WithdrawCurrentAmount" , WithdrawNumber);
+            totalAmount("BalanceCurrentValue", -1*WithdrawNumber);
+            
+            document.getElementById("WithdrawValue").value = "";
+        })
         function ValueToNumber (id) {
             var text = document.getElementById(id).value;
             var number = parseFloat(text);
             return number;
         }
-        function totalAmount(CurrentAmount,Amount){
-            var total = CurrentAmount + Amount;
-            return total;
+        function totalAmount(id,number){
+            var textValue = document.getElementById(id).innerText;
+            var textNumber = parseFloat(textValue);
+            var total = textNumber + number;
+            document.getElementById(id).innerText = total;
         }
 
     </script>
