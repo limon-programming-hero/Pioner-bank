@@ -87,10 +87,10 @@
         
         // deposit event handler
         document.getElementById("DepositButton").addEventListener("click", function () {
-            var DepositeNumber = ValueToNumber("DepositValue");
+            var DepositNumber = ValueToNumber("DepositValue");
 
-            totalAmount("DepositCurrentValue" , DepositeNumber);
-            totalAmount("BalanceCurrentValue", DepositeNumber);
+            totalAmount("DepositCurrentValue" , DepositNumber);
+            totalAmount("BalanceCurrentValue", DepositNumber);
             
             document.getElementById("DepositValue").value = "";
         })
